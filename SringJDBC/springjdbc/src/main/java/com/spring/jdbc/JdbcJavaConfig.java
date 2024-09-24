@@ -14,8 +14,8 @@ import com.spring.jdbc.dao.StudentDaoImpl;
 @Configuration
 @ComponentScan(basePackages = {"com.spring.jdbc.dao"})
 public class JdbcJavaConfig {
-	
-	@Bean(name= {"ds"})
+
+	@Bean(name = {"ds"})
 	public DataSource getDataSource() {
 		DriverManagerDataSource ds = new DriverManagerDataSource();
 		ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
@@ -23,17 +23,17 @@ public class JdbcJavaConfig {
 		ds.setUsername("root");
 		ds.setPassword("root");
 		return ds;
-		
+
 	}
-	
-	@Bean(name= {"jdbcTemplate"})
+
+	@Bean(name = {"jdbcTemplate"})
 	public JdbcTemplate getTemplate() {
 		JdbcTemplate jdbcTemplate = new JdbcTemplate();
 		jdbcTemplate.setDataSource(getDataSource());
 		return jdbcTemplate;
-		
+
 	}
-	
+
 //	@Bean(name= {"studentDao"})
 //	public StudentDao getStudentDao() {
 //		StudentDaoImpl studentDao = new StudentDaoImpl();

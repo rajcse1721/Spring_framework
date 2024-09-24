@@ -7,15 +7,14 @@ import org.springframework.jdbc.core.RowMapper;
 
 import com.spring.jdbc.entity.Student;
 
-public class RowMapperImpl implements RowMapper<Student>{
+public class RowMapperImpl implements RowMapper<Student> {
 
-	@Override
-	public Student mapRow(ResultSet rs, int rowNum) throws SQLException {
-		Student student = new Student();
-		student.setId(rs.getInt(1));
-		student.setName(rs.getString(2));
-		student.setAddress(rs.getString(3));
-		return student;
-	}
-
+    @Override
+    public Student mapRow(ResultSet rs, int rowNum) throws SQLException {
+        Student student = new Student();
+        student.setId(rs.getInt(1));
+        student.setName(rs.getString(2));
+        student.setAddress(rs.getString(3));
+        return student;
+    }
 }
